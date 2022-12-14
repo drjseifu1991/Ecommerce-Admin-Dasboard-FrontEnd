@@ -16,6 +16,7 @@ import Monthly from './scenes/monthly';
 import Breakdown from './scenes/breakdown';
 import Admin from './scenes/admin';
 import Performance from './scenes/performance';
+import Login from './scenes/login'
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -26,6 +27,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
+            <Route path='/login' element={<Login/>}/>
             <Route element={<Layout />}>
               <Route path='/' element={<Navigate to='/dashboard' replace/>} />
               <Route path='/dashboard' element={<Dashboard/>}/>
