@@ -12,9 +12,12 @@ export const globalSlice = createSlice({
     setMode: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
     },
+    setUserId: (state, _id) => {
+      state.userId = _id
+    }
   },
 });
 
-export const { setMode } = globalSlice.actions;
+export const { setMode, setUserId } = globalSlice.actions;
 
 export default globalSlice.reducer;

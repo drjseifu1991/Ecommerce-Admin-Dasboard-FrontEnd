@@ -18,7 +18,7 @@ export const api = createApi({
   endpoints: (build) => ({
     login: build.query({
       query: (user) => ({
-        url: 'login',
+        url: 'login/login',
         method: 'PUT',
         body: user
       }),
