@@ -25,6 +25,7 @@ const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
+  console.log('server', process.env.REACT_APP_API_PATH)
 
   const columns = [
     {

@@ -18,6 +18,7 @@ import Admin from './scenes/admin';
 import Performance from './scenes/performance';
 import Login from './scenes/login'
 import PrivateRoute from './routes';
+import NoMatch from './scenes/NoMatch';
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -43,6 +44,7 @@ function App() {
               <Route path='/admin' element={<PrivateRoute redirectPath='/admin'><Admin /></PrivateRoute>}/>
               <Route path='/performance' element={<PrivateRoute redirectPath='/performance'><Performance/></PrivateRoute>}/>
             </Route>
+            <Route path='*' element={<NoMatch/>}/>
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

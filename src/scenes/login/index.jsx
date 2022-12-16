@@ -2,7 +2,6 @@ import React from 'react'
 import { Grid,Paper, Avatar, TextField} from '@material-ui/core'
 import { LoadingButton } from '@mui/lab'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { useTheme } from '@mui/material';
 import { useState } from 'react'
 import axios from 'axios'
@@ -14,13 +13,12 @@ import { setLoading } from "../../state"
 
 const Login = () => {
     const theme = useTheme()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('drjseifu1991@gmail.com')
+    const [password, setPassword] = useState('RSjzmAjnq')
     const loading = useSelector((state) => state.global.loading)
     const paperStyle={padding :20,height:'50vh',width:350, margin:"8rem auto", backgroundColor: theme.palette.background.alt}
     const avatarStyle={backgroundColor: theme.palette.secondary[500]}
     const textStyle={color: theme.palette.secondary[500]}
-    const formTextStyle={marginTop:'1.5em', color: theme.palette.secondary[500]}
     const btnstyle={margin:'2em 0', backgroundColor:theme.palette.secondary[500], color:"white", padding:'0.5em 0', borderRadius: '0.5em'}
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -52,7 +50,7 @@ const Login = () => {
                     fullWidth 
                     required
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    
                     InputLabelProps={{
                         style: { color: theme.palette.secondary[500] }
                     }} 
@@ -69,7 +67,7 @@ const Login = () => {
                     fullWidth 
                     required
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                   
                     InputLabelProps={{
                         style: { color: theme.palette.secondary[500] },
                     }}
