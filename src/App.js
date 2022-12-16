@@ -17,6 +17,7 @@ import Breakdown from './scenes/breakdown';
 import Admin from './scenes/admin';
 import Performance from './scenes/performance';
 import Login from './scenes/login'
+import PrivateRoute from './routes';
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -28,19 +29,19 @@ function App() {
           <CssBaseline />
           <Routes>
             <Route path='/login' element={<Login/>}/>
-            <Route element={<Layout />}>
+            <Route element={<Layout/>}>
               <Route path='/' element={<Navigate to='/dashboard' replace/>} />
-              <Route path='/dashboard' element={<Dashboard/>}/>
-              <Route path='/products' element={<Products/>}/>
-              <Route path='/customers' element={<Customers/>}/>
-              <Route path='/transactions' element={<Transactions/>}/>
-              <Route path='/geography' element={<Geography/>}/>
-              <Route path='/overview' element={<OverView/>}/>
-              <Route path='/daily' element={<Daily/>}/>
-              <Route path='/monthly' element={<Monthly/>}/>
-              <Route path='/breakdown' element={<Breakdown/>}/>
-              <Route path='/admin' element={<Admin />}/>
-              <Route path='/performance' element={<Performance/>}/>
+              <Route path='/dashboard' element={<PrivateRoute redirectPath='/dasboard'><Dashboard/></PrivateRoute>}/>
+              <Route path='/products' element={<PrivateRoute redirectPath='/products'><Products/></PrivateRoute>}/>
+              <Route path='/customers' element={<PrivateRoute redirectPath='/customers'><Customers/></PrivateRoute>}/>
+              <Route path='/transactions' element={<PrivateRoute redirectPath='/transactions'><Transactions/></PrivateRoute>}/>
+              <Route path='/geography' element={<PrivateRoute redirectPath='/geography'><Geography/></PrivateRoute>}/>
+              <Route path='/overview' element={<PrivateRoute redirectPath='/overview'><OverView/></PrivateRoute>}/>
+              <Route path='/daily' element={<PrivateRoute redirectPath='/daily'><Daily/></PrivateRoute>}/>
+              <Route path='/monthly' element={<PrivateRoute redirectPath='/monthly'><Monthly/></PrivateRoute>}/>
+              <Route path='/breakdown' element={<PrivateRoute redirectPath='/breakdown'><Breakdown/></PrivateRoute>}/>
+              <Route path='/admin' element={<PrivateRoute redirectPath='/admin'><Admin /></PrivateRoute>}/>
+              <Route path='/performance' element={<PrivateRoute redirectPath='/performance'><Performance/></PrivateRoute>}/>
             </Route>
           </Routes>
         </ThemeProvider>

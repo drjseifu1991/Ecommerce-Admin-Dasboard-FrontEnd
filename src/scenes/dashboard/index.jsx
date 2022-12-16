@@ -61,12 +61,11 @@ const Dashboard = () => {
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
         <Header title="DASHBOARD" subTitle="Welcome to your dashboard" />
-
         <Box>
           <Button
             sx={{
-              backgroundColor: theme.palette.secondary.light,
-              color: theme.palette.background.alt,
+              backgroundColor: theme.palette.secondary[500],
+              color: theme.palette.primary[900],
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
@@ -191,14 +190,6 @@ const Dashboard = () => {
             Sales By Category
           </Typography>
           <BreakdownChart isDashboard={true} />
-          <Typography
-            p="0 0.6rem"
-            fontSize="0.8rem"
-            sx={{ color: theme.palette.secondary[200] }}
-          >
-            Breakdown of real states and information via category for revenue
-            made for this year and total sales.
-          </Typography>
         </Box>
       </Box>
     </Box>

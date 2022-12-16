@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {
   LightModeOutlined,
   DarkModeOutlined,
@@ -8,9 +10,10 @@ import {
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
 import FlexBetween from "../components/FlexBetween";
-import { useDispatch } from "react-redux";
 import { setMode } from "../state";
 import profileImage from "../asset/profile.jpg";
+import { removeUserId } from "../utils";
+import { setUser } from "../state";
 import {
   AppBar,
   Button,
@@ -26,11 +29,25 @@ import {
 
 const NavBar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
+  const [query, setQuery] = useState('')
   const handleClick = (event) => setAnchorEl(event.currentTarget);
-  const handleClose = () => setAnchorEl(null);
+  const handleClose = () => {
+    setAnchorEl(null);
+  }
+
+  const search = () => {
+    navigate(`/${query.toLowerCase()}`)
+  }
+  const handleLogout = () => {
+    setAnchorEl(null);
+    removeUserId()
+    setUser('')
+    navigate('/login')
+  }
 
   return (
     <AppBar
@@ -52,8 +69,8 @@ const NavBar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
             gap="3rem"
             p="0.1rem 1.5rem"
           >
-            <InputBase placeholder="Search..." />
-            <IconButton>
+            <InputBase placeholder="Search..." onChange={(e) => setQuery(e.target.value) }/>
+            <IconButton onClick={search}>
               <Search />
             </IconButton>
           </FlexBetween>
@@ -117,7 +134,7 @@ const NavBar = ({ user, isSideBarOpen, setIsSideBarOpen }) => {
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
-              <MenuItem onClick={handleClose}>Log Out</MenuItem>
+              <MenuItem onClick={handleLogout}>Log Out</MenuItem>
             </Menu>
           </FlexBetween>
         </FlexBetween>

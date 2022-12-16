@@ -5,7 +5,7 @@ import NavBar from "../../components/NavBar";
 import SideBar from "../../components/SideBar";
 import { useGetUserQuery } from "../../state/api";
 import { useSelector } from "react-redux";
-
+import { getUserId } from "../../utils";
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const [isSideBarOpen, setIsSideBarOpen] = useState(true);
