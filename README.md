@@ -1,16 +1,17 @@
-# My Github Profile
+# Ecommerce Admin Dashboard
 
-A nicer look at your GitHub Profile! With charts!
+An Ecommerce admin dashboard!
 
 ![demo](https://raw.githubusercontent.com/drjseifu1991/Ecommerce-Admin-Dasboard-FrontEnd/master/image/EcAdDa.jpg)
 
 Built with:
 
-- [Next.js](https://nextjs.org/)
-- [GitHub Polyglot](https://github.com/IonicaBizau/node-gh-polyglot)
-- [Chart.js](https://www.chartjs.org/)
-- [React Flip Move](https://github.com/joshwcomeau/react-flip-move)
-- [Styled Components](https://www.styled-components.com/)
+- [ReactJS](https://nextjs.org/)
+- [Material UI](https://github.com/IonicaBizau/node-gh-polyglot)
+- [MongoDB](https://www.chartjs.org/)
+- [ExpressJS](https://github.com/joshwcomeau/react-flip-move)
+- [NodeJS](https://www.styled-components.com/)
+- [nivo](https://www.styled-components.com/)
 
 ## Getting Started
 
@@ -23,19 +24,5 @@ Built with:
 2. Fire up the server and watch files
 
    ```bash
-   npm run dev
-   ```
-
-## Deployment
-
-1. Install the Now CLI
-
-   ```bash
-   npm add now
-   ```
-
-2. Deploy!
-
-   ```bash
-   now
+   npm start
    ```
