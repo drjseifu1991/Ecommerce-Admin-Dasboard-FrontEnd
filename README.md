@@ -4,7 +4,7 @@ An Ecommerce admin dashboard!
 
 [demo](https://one999-ecommerce-dashboard.onrender.com/)
 
-(https://raw.githubusercontent.com/drjseifu1991/Ecommerce-Admin-Dasboard-FrontEnd/master/image/EcAdDa.jpg)
+![screenshot](https://raw.githubusercontent.com/drjseifu1991/Ecommerce-Admin-Dasboard-FrontEnd/master/image/EcAdDa.jpg)
 
 Built with:
 
